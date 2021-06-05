@@ -1,3 +1,3 @@
-from src.domain.Bank import Bank
+from src.main.App import App
 
-print('Teste')
+App.run()

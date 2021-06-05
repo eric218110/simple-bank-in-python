@@ -2,9 +2,8 @@ from abc import ABC, abstractmethod
 
 
 class Account(ABC):
-    def __init__(self, agency: int, account, number: int, balance: int) -> None:
+    def __init__(self, agency, account, balance) -> None:
         self.agency = agency
-        self.number = number
         self.account = account
         self.balance = balance
 
@@ -13,9 +12,11 @@ class Account(ABC):
         self.showMessage()
 
     def showMessage(self) -> None:
+        print('************************')
         print(f'Agência: {self.agency}')
         print(f'Conta: {self.account}')
         print(f'Saldo: {self.balance}')
+        print('************************')
 
     @abstractmethod
     def withdraw(self, value: int) -> None: pass

@@ -2,12 +2,10 @@ from src.domain.Account import Account
 
 
 class AccountCurrent(Account):
-    def __init__(self, agency: int, account, number: int, balance: int, limitExtra: int = 100) -> None:
-        super.__init__(agency, account, number, balance)
-        self.limitExtra = limitExtra
+    limit = 100
 
     def withdraw(self, value: int) -> None:
-        if (self.balance + self.limitExtra) < value:
+        if (self.balance + AccountCurrent.limit) < value:
             print('Saldo insuficiente')
             return
         self.balance -= value
