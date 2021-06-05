@@ -1,0 +1,2 @@
+class AccountCurrent:
+    pass
